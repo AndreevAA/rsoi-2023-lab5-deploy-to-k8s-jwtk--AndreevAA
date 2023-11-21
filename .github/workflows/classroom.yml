@@ -71,4 +71,4 @@ jobs:
           homework_number: 5
           user_column: 'D'
           column_offset: 'F'
-          mark: "'+"%          
+          mark: "'+"          
