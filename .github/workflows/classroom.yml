@@ -47,7 +47,7 @@ jobs:
       - name: 'Deploy App'
         run: |
           cd k8s/services-chart
-          help uninstall app
+          helm uninstall app
           helm upgrade app . --kubeconfig test.kubeconfig
           sleep 60
 
