@@ -4,6 +4,7 @@ from django.test.client import Client
 
 class GatewayTestCase(TestCase):
 
+
     def test_get_libraries(self):
         client = Client()
         response_instance = client.get(

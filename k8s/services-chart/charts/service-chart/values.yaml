@@ -1,4 +1,4 @@
-domain: "158.160.121.238"
+domain: "158.160.108.69"
 service:
   port: 8080
   isGateway:

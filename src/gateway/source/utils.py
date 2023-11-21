@@ -1,8 +1,8 @@
 import requests
 from django.core.serializers.json import DjangoJSONEncoder
 from django.http import JsonResponse
-from oauth2_provider.contrib.rest_framework import OAuth2Authentication
 from rest_framework import status as status_codes
+from rest_framework.exceptions import APIException
 from rest_framework.utils import json
 
 from .circuitbreaker import (
@@ -111,6 +111,8 @@ def get_request_instance(url: str, WSGIRequest, **url_kwargs):
     )
 
 
+
+
 def request_error(request, *args, detail=None, **kwargs):
     data = {
         "error": "Service is unavailable."
@@ -119,7 +121,6 @@ def request_error(request, *args, detail=None, **kwargs):
         content=data,
         status=status_codes.HTTP_503_SERVICE_UNAVAILABLE,
     )
-
 
 def request_authentication_failed(request, *args, detail=None, **kwargs):
     data = {
@@ -140,7 +141,6 @@ def request_non_authenticated(request, *args, detail=None, **kwargs):
         status=status_codes.HTTP_401_UNAUTHORIZED,
     )
 
-
 def validate_on_cb(
     service: Service, url: str, on_unavailable: dict | list | str, shielding: dict = {}, as_method: str = None
 ):
@@ -150,7 +150,7 @@ def validate_on_cb(
         ) -> JsonResponse | Request:
             if WSGIRequest.headers.get("Authorization", None) is None:
                 return request_non_authenticated(WSGIRequest)
-            if OAuth2Authentication().authenticate(WSGIRequest) is None:
+            if WSGIRequest is None:
                 return request_authentication_failed(WSGIRequest)
             if CircuitBreaker.should_raise(service):
                 return request_error(WSGIRequest, detail=on_unavailable)

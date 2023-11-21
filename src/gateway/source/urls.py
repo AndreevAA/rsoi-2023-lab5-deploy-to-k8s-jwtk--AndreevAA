@@ -6,7 +6,7 @@ from .views import (
 
 urlpatterns = [
     path(
-       "callback", callback,
+        "callback", callback,
     ), path(
         "rating", rating,
     ),  path(
