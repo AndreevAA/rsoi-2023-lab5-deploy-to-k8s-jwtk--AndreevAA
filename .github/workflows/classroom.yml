@@ -41,7 +41,7 @@ jobs:
       - name: 'Deploy DB'
         run: |
           cd k8s/postgres-chart
-          helm upgrade db
+          helm upgrade db . --kubeconfig test.kubeconfig
           sleep 60
 
       - name: 'Deploy App'
