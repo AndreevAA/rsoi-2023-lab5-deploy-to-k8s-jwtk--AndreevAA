@@ -1,35 +1,35 @@
 {
   "id": "acc90f86-88ad-444e-924e-6f48f6ee7711",
-  "name": "[rsoi][lab5] Flight Service",
+  "name": "[rsoi][lab5] Library",
   "values": [
     {
       "key": "serviceUrl",
-      "value": "",
+      "value": "http://158.160.121.238",
       "enabled": true
     },
     {
       "key": "identityProviderUrl",
-      "value": "",
+      "value": "https://dev-fjjc71sgfbfz112v.us.auth0.com",
       "enabled": true
     },
     {
       "key": "username",
-      "value": "",
+      "value": "andreev@ingry.tech",
       "enabled": true
     },
     {
       "key": "password",
-      "value": "",
+      "value": "MfEZ6BLZuPcbhJk",
       "enabled": true
     },
     {
-      "key": "clientId",
-      "value": "",
+      "key": "client_id",
+      "value": "Lrx2sC1VUjsoHIHtIeF4Ed7zFu5lUaeM",
       "enabled": true
     },
     {
-      "key": "clientSecret",
-      "value": "",
+      "key": "client_secret",
+      "value": "nS6EFTkqwVmw7E83ZhoND36EFywZP1cuo6UlbItCOAxWyfBUMvG9BD21kY7iu3HZ",
       "enabled": true
     }
   ],
